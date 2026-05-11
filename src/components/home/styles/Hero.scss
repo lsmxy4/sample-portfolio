@@ -1,27 +1,61 @@
-.inner.hero-inner {
-    display: flex;
-    align-items: center;
-    height: 100vh;
+.hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
 
-    p.txt {
-        position: absolute;
-        text-align: right;
-        right: 2rem;
-        bottom: 10rem;
+    .inner.hero-inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
 
-        @media screen and (max-width:599px) {
-            font-size: 1.6rem;
-            // width:50%;
+        .tit,
+        .txt,
+        .arrow {
+            position: relative;
+            z-index: 2;
+            color: #fff;
         }
-                @media screen and (max-width:399px) {
-                    display: none;
-                }
+
+        .tit {
+            span {
+                color: #ebebeb;
+            }
+        }
+
+        p.txt {
+            position: absolute;
+            text-align: right;
+            right: 2rem;
+            bottom: 10rem;
+            color: rgba(255, 255, 255, 0.72);
+
+            @media screen and (max-width: 599px) {
+                font-size: 1.6rem;
+            }
+
+            @media screen and (max-width: 399px) {
+                display: none;
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            bottom: 3rem;
+            left: calc(50% - 1.5rem);
+            animation: up 1s infinite alternate ease-in-out;
+            color: #fff;
+        }
     }
 
-    .arrow {
-        position: absolute;
-        bottom: 3rem;
-        left: calc(50% - 1.5rem);
-        animation: up 1s infinite alternate ease-in-out;
+    .canvas {
+        position: absolute !important;
+        inset: 0;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 0;
     }
 }
